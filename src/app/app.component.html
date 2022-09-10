@@ -16,6 +16,9 @@
     </button>
 
 </form>
+
 <div class="ui grid pots">
-    <app-article></app-article>
+    <app-article *ngFor="let article of arcticles" [arcticle]="article">
+        
+    </app-article>
 </div>
