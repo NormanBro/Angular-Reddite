@@ -16,10 +16,14 @@ export class AppComponent {
       new Article('Fullstack','http://fullstack.io',2),
       new Article('Angular Homepage','http://angular.io',1),
     ]
+    
   }
   addArticle(newtitle:HTMLInputElement,newlink:HTMLInputElement): boolean{
-    console.log(`Adding article title:${newtitle.value} and link:${newlink.value}`);
+    this.arcticles.push(new Article(newtitle.value,newlink.value,32));
     return false;
   }
 
+  sortedArticle():Article[]{
+    return this.arcticles.sort((a:Article, b:Article)=> b.votes - a.votes);
+  }
 }
